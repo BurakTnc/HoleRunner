@@ -1,3 +1,4 @@
+using System;
 using _YabuGames.Scripts.Signals;
 using UnityEngine;
 
@@ -9,14 +10,12 @@ namespace _YabuGames.Scripts.Controllers
 
         [SerializeField] private float xPosClamp, speedSideways, speed;
         
-        private Rigidbody _rb;
         private Vector3 _pos1, _pos2;
         private bool _holding;
         private bool _isGameRunning;
         
        private void Awake()
         {
-            _rb = GetComponentInChildren<Rigidbody>();
             _isGameRunning = _holding = OnTrap = false;
         }
 
@@ -46,7 +45,12 @@ namespace _YabuGames.Scripts.Controllers
        }
 
        #endregion
-       
+
+       private void Start()
+       {
+           CoreGameSignals.Instance.OnGameStart?.Invoke();
+       }
+
        private void Update()
         {
             Movement();
@@ -77,14 +81,14 @@ namespace _YabuGames.Scripts.Controllers
                 if (Input.GetMouseButton(0) && _holding)
                 {
                     _pos2 = GetMousePosition();
-                    Vector3 delta = _pos1 - _pos2;
+                    var delta = _pos1 - _pos2;
                     _pos1 = _pos2;
-                    delta = new Vector3(Mathf.Clamp(delta.x, -0.05f, 0.05f), delta.y);
-                    _rb.velocity = new Vector3(Mathf.Lerp(_rb.velocity.x, -delta.x * speedSideways, 0.2f), _rb.velocity.y, speed);
+                    transform.position += new Vector3(-delta.x * speedSideways * Time.deltaTime, 0,
+                        speed * Time.deltaTime);
                 }
                 else
                 {
-                    _rb.velocity = transform.forward * speed;
+                    transform.position += transform.forward * (speed * Time.deltaTime);
                 }
 
                 var position = transform.position;
