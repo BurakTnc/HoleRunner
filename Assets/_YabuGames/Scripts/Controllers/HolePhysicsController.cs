@@ -27,10 +27,5 @@ namespace _YabuGames.Scripts.Controllers
         {
             ApplyGravity(transform.position,forceRange,layerMask);
         }
-
-        private void OnDrawGizmos()
-        {
-            Gizmos.DrawWireSphere(transform.position,forceRange);
-        }
     }
 }
