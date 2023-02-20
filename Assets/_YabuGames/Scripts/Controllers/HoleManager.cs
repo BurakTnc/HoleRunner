@@ -43,7 +43,7 @@ namespace _YabuGames.Scripts.Controllers
 
             for (int i = 0; i < _verticesIndex.Count; i++)
             {
-                vertices[_verticesIndex[i]] = transform.position + _offset[i] * holeSize;
+                vertices[_verticesIndex[i]] = transform.position + _offset[i] * 1;
             }
 
             Debug.Log(vertices.Length);
