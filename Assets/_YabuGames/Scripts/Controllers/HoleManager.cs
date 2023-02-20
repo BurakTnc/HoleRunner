@@ -13,23 +13,25 @@ namespace _YabuGames.Scripts.Controllers
         [SerializeField] private new MeshCollider collider;
 
         private Mesh _mesh;
-        private List<int> _verticesIndex = new List<int>();
-        private readonly List<Vector3> _offset = new List<Vector3>();
+       [SerializeField] private List<int> _verticesIndex = new List<int>();
+       [SerializeField] private readonly List<Vector3> _offset = new List<Vector3>();
 
         private void Awake()
         {
-            _mesh = meshFilter.mesh;
+            
             
         }
 
         private void Start()
         {
+            _mesh = meshFilter.mesh;
             for (int i = 0; i < _mesh.vertices.Length; i++)
             {
                 var distance = Vector3.Distance(transform.position, _mesh.vertices[i]);
                 
-                if (distance<=standardDistance)
+                if (distance<=holeSize)
                 {
+                    
                     _verticesIndex.Add(i);
                     _offset.Add(_mesh.vertices[i]-transform.position);
                 }
@@ -45,9 +47,15 @@ namespace _YabuGames.Scripts.Controllers
                 vertices[_verticesIndex[i]] = transform.position + _offset[i] * holeSize;
             }
 
+            Debug.Log(vertices.Length);
             _mesh.vertices = vertices;
             meshFilter.mesh = _mesh;
             collider.sharedMesh = _mesh;
+        }
+        private void OnDrawGizmos()
+        {
+            Gizmos.color=Color.red;
+            Gizmos.DrawWireSphere(transform.position,holeSize);
         }
     }
 }
