@@ -38,7 +38,7 @@ namespace _YabuGames.Scripts.Controllers
 
         private void LateUpdate()
         {
-            va r vertices = _mesh.vertices;
+            var vertices = _mesh.vertices;
 
             for (int i = 0; i < _verticesIndex.Count; i++)
             {
