@@ -14,7 +14,7 @@ namespace _YabuGames.Scripts.Controllers
 
         private Mesh _mesh;
        [SerializeField] private List<int> _verticesIndex = new List<int>();
-       [SerializeField] private readonly List<Vector3> _offset = new List<Vector3>();
+       [SerializeField] private List<Vector3> _offset = new List<Vector3>();
 
         private void Awake()
         {
@@ -31,7 +31,6 @@ namespace _YabuGames.Scripts.Controllers
                 
                 if (distance<=holeSize)
                 {
-                    
                     _verticesIndex.Add(i);
                     _offset.Add(_mesh.vertices[i]-transform.position);
                 }
