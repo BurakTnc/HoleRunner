@@ -27,5 +27,11 @@ namespace _YabuGames.Scripts.Controllers
         {
             ApplyGravity(transform.position,forceRange,layerMask);
         }
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.color=Color.blue;
+            Gizmos.DrawSphere(transform.position,forceRange);
+        }
     }
 }
