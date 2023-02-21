@@ -1,5 +1,7 @@
 using System;
+using System.Collections;
 using _YabuGames.Scripts.Signals;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace _YabuGames.Scripts.Controllers
@@ -14,12 +16,11 @@ namespace _YabuGames.Scripts.Controllers
         private bool _holding;
         private bool _isGameRunning;
         
-       private void Awake()
+        private void Awake()
         {
             _isGameRunning = _holding = OnTrap = false;
         }
-
-       #region Subscribtions
+        #region Subscribtions
        private void OnEnable()
        {
            Subscribe();
@@ -46,8 +47,10 @@ namespace _YabuGames.Scripts.Controllers
 
        #endregion
 
-       private void Start()
+       private IEnumerator Start()
        {
+           yield return new WaitForSeconds(1);
+           transform.position = new Vector3(0, 0, -91);
            CoreGameSignals.Instance.OnGameStart?.Invoke();
        }
 

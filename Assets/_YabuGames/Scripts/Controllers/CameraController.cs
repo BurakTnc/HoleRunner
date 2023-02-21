@@ -13,7 +13,7 @@ namespace _YabuGames.Scripts.Controllers
 
         private void Awake()
         {
-            _player = GameObject.Find("Player").transform;
+            _player = GameObject.Find("HoleCenter").transform;
         }
 
         private void OnEnable()
