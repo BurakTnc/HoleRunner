@@ -14,12 +14,7 @@ namespace _YabuGames.Scripts.Controllers
         private Mesh _mesh;
         private List<int> _verticesIndex = new List<int>();
         private List<Vector3> _offset = new List<Vector3>();
-
-        private void Awake()
-        {
-            
-            
-        }
+        
 
         private void Start()
         {

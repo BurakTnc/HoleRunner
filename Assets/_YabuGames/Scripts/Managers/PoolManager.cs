@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace _YabuGames.Scripts.Managers
 {
@@ -9,7 +10,7 @@ namespace _YabuGames.Scripts.Managers
         
     [Header("                               // Set Particles Stop Action To DISABLE //")]
     [Space(20)]
-        [SerializeField] private List<GameObject> firstParticle = new List<GameObject>();
+        [SerializeField] private List<GameObject> projectiles = new List<GameObject>();
         [SerializeField] private List<GameObject> secondParticle = new List<GameObject>();
         [SerializeField] private List<GameObject> thirdParticle = new List<GameObject>();
         [SerializeField] private List<GameObject> fourthParticle = new List<GameObject>();
@@ -30,13 +31,13 @@ namespace _YabuGames.Scripts.Managers
             
         }
 
-        public void GetFirstParticle(Vector3 desiredPos)
+        public void GetProjectile(Vector3 desiredPos)
         {
-            var temp = firstParticle[0];
-            firstParticle.Remove(temp);
+            var temp = projectiles[0];
+            projectiles.Remove(temp);
             temp.transform.position = desiredPos;
             temp.SetActive(true);
-            firstParticle.Add(temp);
+            projectiles.Add(temp);
             
         }
         public void GetSecondParticle(Vector3 desiredPos)
