@@ -21,7 +21,7 @@ namespace _YabuGames.Scripts.Objects
             {
                 var obj = collision.transform;
                 gameObject.SetActive(false);
-                obj.DOShakeScale(.1f, Vector3.one*.5f, 5, 100, true);
+                obj.DOShakeScale(.1f, Vector3.one*.3f, 5, 100, true);
                 if (obj.localScale.magnitude>minimumSize.magnitude)
                 {
                     obj.localScale -= reduceRate;

@@ -112,4 +112,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 50
   reduceRate: {x: 0.1, y: 0.1, z: 0.1}
-  minimumSize: {x: 0.3, y: 0.3, z: 0.3}
+  minimumSize: {x: 0.7, y: 0.7, z: 0.7}

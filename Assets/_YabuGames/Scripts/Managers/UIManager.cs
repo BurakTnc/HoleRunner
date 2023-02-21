@@ -64,8 +64,8 @@ namespace _YabuGames.Scripts.Managers
         
         private void OnGameStart()
         {
-            mainPanel.SetActive(false);
-            gamePanel.SetActive(true);
+            // mainPanel.SetActive(false);
+            // gamePanel.SetActive(true);
         }
         private void SetMoneyTexts()
         {
