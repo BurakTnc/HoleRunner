@@ -10,11 +10,14 @@ namespace _YabuGames.Scripts.Controllers
         [SerializeField] private float holeSize = 1;
         [SerializeField] private MeshFilter meshFilter;
         [SerializeField] private new MeshCollider collider;
+        [SerializeField] private Transform fake3D;
+        [SerializeField] private Vector3 fakeHoleIncreaseRate;
 
         private Mesh _mesh;
-        private List<int> _verticesIndex = new List<int>();
-        private List<Vector3> _offset = new List<Vector3>();
-        
+        private readonly List<int> _verticesIndex = new List<int>();
+        private readonly List<Vector3> _offset = new List<Vector3>();
+        private readonly List<float> _yPosList = new List<float>();
+
 
         private void Start()
         {
@@ -29,6 +32,11 @@ namespace _YabuGames.Scripts.Controllers
                     _offset.Add(_mesh.vertices[i]-transform.position);
                 }
             }
+
+            for (int i = 0; i < _offset.Count; i++)
+            {
+                _yPosList.Add(_offset[i].y);
+            }
         }
 
         private void LateUpdate()
@@ -39,7 +47,15 @@ namespace _YabuGames.Scripts.Controllers
             {
                 vertices[_verticesIndex[i]] = transform.position + _offset[i] * holeSize;
             }
-            
+
+            for (int i = 0; i < _verticesIndex.Count; i++)
+            {
+                vertices[_verticesIndex[i]].y = _yPosList[i];
+            }
+
+            var holeScale = new Vector3(holeSize * fakeHoleIncreaseRate.x, fake3D.localScale.y,
+                holeSize * fakeHoleIncreaseRate.z);
+            fake3D.localScale = holeScale;
             _mesh.vertices = vertices;
             meshFilter.mesh = _mesh;
             collider.sharedMesh = _mesh;
