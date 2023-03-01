@@ -15,11 +15,11 @@ namespace _YabuGames.Scripts.Objects
             transform.position += Vector3.forward * (speed * Time.deltaTime);
         }
 
-        private void OnCollisionEnter(Collision collision)
+        private void OnTriggerEnter(Collider other)
         {
-            if (collision.gameObject.CompareTag("Prop"))
+            if (other.gameObject.CompareTag("Prop"))
             {
-                var obj = collision.transform;
+                var obj = other.transform;
                 gameObject.SetActive(false);
                 obj.DOShakeScale(.1f, Vector3.one*.3f, 5, 100, true);
                 if (obj.localScale.magnitude>minimumSize.magnitude)
