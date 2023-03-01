@@ -16,6 +16,13 @@ namespace _YabuGames.Scripts.Objects
         [SerializeField] private float fireRate;
         [SerializeField] private TextMeshPro gateText;
 
+        [Header("Colored Objects")] [SerializeField]
+         private MeshRenderer[] renderers = new MeshRenderer[2];
+         [SerializeField] private SpriteRenderer spriteRenderer;
+         [Header("Materials")] [SerializeField] private Material greenMat;
+         [SerializeField] private Material redMat;
+         [SerializeField] private Sprite greenSprite, redSprite;
+
         private void Start()
         {
             SetText();
@@ -28,10 +35,21 @@ namespace _YabuGames.Scripts.Objects
                 case GateMode.Range:
                     if (rangeValue > 0)
                     {
+                        foreach (var meshRenderer in renderers)
+                        {
+                            meshRenderer.material.DOColor(greenMat.color,.5f);
+                        }
+
+                        spriteRenderer.sprite = greenSprite;
                         gateText.text = "+" + rangeValue;
                     }
                     else
                     {
+                        foreach (var meshRenderer in renderers)
+                        {
+                            meshRenderer.material.DOColor(redMat.color, .5f);
+                        }
+                        spriteRenderer.sprite = redSprite;
                         gateText.text = rangeValue.ToString();
                     }
                     break;
