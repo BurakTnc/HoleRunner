@@ -31,7 +31,7 @@ namespace _YabuGames.Scripts.Controllers
         private void OnDrawGizmos()
         {
             Gizmos.color=Color.blue;
-            Gizmos.DrawSphere(transform.position,forceRange);
+            Gizmos.DrawWireSphere(transform.position,forceRange);
         }
     }
 }

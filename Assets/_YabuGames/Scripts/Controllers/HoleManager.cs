@@ -16,6 +16,7 @@ namespace _YabuGames.Scripts.Controllers
         private readonly List<int> _verticesIndex = new List<int>();
         private readonly List<Vector3> _offset = new List<Vector3>();
         private readonly List<float> _yPosList = new List<float>();
+        private List<float> _height = new List<float>();
 
 
         private void Start()
@@ -31,6 +32,11 @@ namespace _YabuGames.Scripts.Controllers
                     _offset.Add(_mesh.vertices[i]-transform.position);
                 }
             }
+            var vertices = _mesh.vertices;
+            for (int i = 0; i < vertices.Length; i++)
+            {
+                _height.Add(vertices[i].y);
+            }
 
             for (int i = 0; i < _offset.Count; i++)
             {
@@ -40,16 +46,16 @@ namespace _YabuGames.Scripts.Controllers
 
         private void LateUpdate()
         {
+            
             var vertices = _mesh.vertices;
-
             for (int i = 0; i < _verticesIndex.Count; i++)
             {
                 vertices[_verticesIndex[i]] = transform.position + _offset[i] * holeSize;
             }
 
-            for (int i = 0; i < _verticesIndex.Count; i++)
+            for (int i = 0; i < vertices.Length; i++)
             {
-                vertices[_verticesIndex[i]].y = _yPosList[i];
+                vertices[i].y = _height[i];
             }
 
             var holeScale = new Vector3(holeSize * fakeHoleIncreaseRate.x, fake3D.localScale.y,
@@ -61,8 +67,8 @@ namespace _YabuGames.Scripts.Controllers
         }
         private void OnDrawGizmos()
         {
-            Gizmos.color=Color.black;
-            Gizmos.DrawSphere(transform.position,standardDistance);
+            Gizmos.color=Color.red;
+            Gizmos.DrawWireSphere(transform.position,standardDistance);
         }
     }
 }
