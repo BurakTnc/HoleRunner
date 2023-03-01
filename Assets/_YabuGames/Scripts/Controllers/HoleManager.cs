@@ -44,6 +44,11 @@ namespace _YabuGames.Scripts.Controllers
             }
         }
 
+        public void SizeUp(float value)
+        {
+            holeSize += value;
+        }
+
         private void LateUpdate()
         {
             

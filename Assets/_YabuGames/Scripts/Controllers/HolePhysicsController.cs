@@ -1,4 +1,5 @@
 using System;
+using _YabuGames.Scripts.Interfaces;
 using UnityEngine;
 
 namespace _YabuGames.Scripts.Controllers
@@ -32,6 +33,14 @@ namespace _YabuGames.Scripts.Controllers
         {
             Gizmos.color=Color.blue;
             Gizmos.DrawWireSphere(transform.position,forceRange);
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.TryGetComponent(out IInteractable gate))
+            {
+                gate.Interact();
+            }
         }
     }
 }

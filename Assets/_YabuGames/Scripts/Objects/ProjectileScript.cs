@@ -50,6 +50,7 @@ namespace _YabuGames.Scripts.Objects
             if (other.gameObject.CompareTag("Prop"))
             {
                 var obj = other.transform;
+                var currentScale = obj.localScale;
                 gameObject.SetActive(false);
                 obj.DOShakeScale(.1f, Vector3.one*.3f, 5, 100, true);
                 if (obj.localScale.magnitude>minimumSize.magnitude)

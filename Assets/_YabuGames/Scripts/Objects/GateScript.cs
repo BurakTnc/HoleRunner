@@ -82,6 +82,8 @@ namespace _YabuGames.Scripts.Objects
                 default:
                     break;
             }
+
+            transform.DOScale(Vector3.zero, 1).SetEase(Ease.InBack);
         }
 
         public void Interact()

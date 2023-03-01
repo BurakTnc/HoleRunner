@@ -37,7 +37,7 @@ namespace _YabuGames.Scripts.Controllers
                 _fireRate += Mathf.Abs(newRate) / 10;
             }
             
-            _fireRate = Mathf.Clamp(_fireRate, 0.05f, 5);
+            _fireRate = Mathf.Clamp(_fireRate, 0.12f, 5);
         }
 
         private void ChangeRange(int newValue)
@@ -48,7 +48,7 @@ namespace _YabuGames.Scripts.Controllers
             }
             else
             {
-                _range -= Mathf.Abs(newValue) * 10;
+                _range -= Mathf.Abs(newValue) * 5;
             }
             
             _range = Mathf.Clamp(_range, 10, 500);
