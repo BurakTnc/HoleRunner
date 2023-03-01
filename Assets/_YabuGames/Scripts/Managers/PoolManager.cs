@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using _YabuGames.Scripts.Objects;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -31,12 +32,13 @@ namespace _YabuGames.Scripts.Managers
             
         }
 
-        public void GetProjectile(Vector3 desiredPos)
+        public void GetProjectile(Vector3 desiredPos,int range)
         {
             var temp = projectiles[0];
             projectiles.Remove(temp);
             temp.transform.position = desiredPos;
             temp.SetActive(true);
+            temp.GetComponent<ProjectileScript>().SetRange(range);
             projectiles.Add(temp);
             
         }

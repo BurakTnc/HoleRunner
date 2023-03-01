@@ -1,4 +1,5 @@
 using System;
+using _YabuGames.Scripts.Interfaces;
 using DG.Tweening;
 using UnityEngine;
 
@@ -10,13 +11,42 @@ namespace _YabuGames.Scripts.Objects
         [SerializeField] private Vector3 reduceRate;
         [SerializeField] private Vector3 minimumSize;
 
+        private Vector3 _startPos;
+        private float _range = 10;
+
+        private void Shoot()
+        {
+            _startPos = transform.position;
+        }
+
         private void Update()
         {
             transform.position += Vector3.forward * (speed * Time.deltaTime);
+            CalculateRange();
+        }
+        
+
+        private void CalculateRange()
+        {
+            var distance = transform.position.z - _startPos.z;
+            if (distance >= _range) 
+            {
+                gameObject.SetActive(false);
+            }
         }
 
+        public void SetRange(int newValue)
+        {
+            _range = newValue;
+            Shoot();
+        }
         private void OnTriggerEnter(Collider other)
         {
+            if (other.TryGetComponent(out IInteractable gate))
+            {
+                gate.Shoot();
+            }
+            
             if (other.gameObject.CompareTag("Prop"))
             {
                 var obj = other.transform;
@@ -26,9 +56,9 @@ namespace _YabuGames.Scripts.Objects
                 {
                     obj.localScale -= reduceRate;
                 }
-                
-
             }
+
+            
         }
     }
 }

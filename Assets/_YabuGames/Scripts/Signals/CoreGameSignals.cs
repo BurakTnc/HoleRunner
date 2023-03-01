@@ -8,11 +8,13 @@ namespace _YabuGames.Scripts.Signals
         public static CoreGameSignals Instance;
 
         public UnityAction OnGameStart = delegate { };
-        public UnityAction OnLevelLoad= delegate {  };
+        public UnityAction OnLevelLoad= delegate { };
         public UnityAction OnLevelWin=delegate { };
         public UnityAction OnLevelFail=delegate { };
         public UnityAction OnSave = delegate { };
         public UnityAction<int,bool> OnSpawnCoins=delegate { };
+        public UnityAction<int> OnRangeChange = delegate { };
+        public UnityAction<float> OnFireRateChange = delegate { };
 
         #region Singleton
         private void Awake()
