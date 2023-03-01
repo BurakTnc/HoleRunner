@@ -302,7 +302,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1602641937945142724, guid: a3bf00f5976b241e296cbd5dd62c1521, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -24.87
+      value: -53.370003
       objectReference: {fileID: 0}
     - target: {fileID: 1602641937945142724, guid: a3bf00f5976b241e296cbd5dd62c1521, type: 3}
       propertyPath: m_LocalRotation.w
@@ -904,7 +904,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1602641937945142724, guid: a3bf00f5976b241e296cbd5dd62c1521, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -14.123829
+      value: -42.623833
       objectReference: {fileID: 0}
     - target: {fileID: 1602641937945142724, guid: a3bf00f5976b241e296cbd5dd62c1521, type: 3}
       propertyPath: m_LocalRotation.w
@@ -14261,10 +14261,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33928b7d6f9f44b3855041881507c6fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 470
+  power: 718
   upOrDown: -5
   forceRange: 1.95
-  forceMode: 0
+  forceMode: 5
   layerMask:
     serializedVersion: 2
     m_Bits: 128
@@ -14316,7 +14316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9f88868fed2f46cc9d809bd2aa5ebb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xPosClamp: 8
+  xPosClamp: 7.5
   speedSideways: 9000
   speed: 5
 --- !u!114 &1956632239
