@@ -30,11 +30,11 @@ namespace _YabuGames.Scripts.Controllers
         {
             if (newRate>0)
             {
-                _fireRate -= newRate / 10;
+                _fireRate -= newRate / 30;
             }
             else
             {
-                _fireRate += Mathf.Abs(newRate) / 10;
+                _fireRate += Mathf.Abs(newRate) / 30;
             }
             
             _fireRate = Mathf.Clamp(_fireRate, 0.12f, 5);

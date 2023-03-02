@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5735247930290273849}
   - component: {fileID: 2806113310118856787}
   - component: {fileID: 1129951432617823985}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_cinder_block_01
   m_TagString: Prop
   m_Icon: {fileID: 0}

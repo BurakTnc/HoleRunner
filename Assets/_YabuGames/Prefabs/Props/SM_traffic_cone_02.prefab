@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -4757808960928375702}
   - component: {fileID: 5005489389121618019}
   - component: {fileID: 713871343645190642}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_traffic_cone_02
   m_TagString: Prop
   m_Icon: {fileID: 0}

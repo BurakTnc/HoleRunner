@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5457928759965058164}
   - component: {fileID: 1920735296982342135}
   - component: {fileID: 4465239913995216756}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_Prop_PlanterWindow_02
   m_TagString: Prop
   m_Icon: {fileID: 0}

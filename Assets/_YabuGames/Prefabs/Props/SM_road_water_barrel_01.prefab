@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -7463734479154246218}
   - component: {fileID: 7432740721348640496}
   - component: {fileID: 5573757113516799506}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_road_water_barrel_01
   m_TagString: Prop
   m_Icon: {fileID: 0}
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 877000743465632229}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 2.5656, y: 2.5656, z: 2.5656}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

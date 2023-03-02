@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -573417245157254316}
   - component: {fileID: 4784436606376753400}
   - component: {fileID: 588004644778737858}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_Street_light_02
   m_TagString: Prop
   m_Icon: {fileID: 0}

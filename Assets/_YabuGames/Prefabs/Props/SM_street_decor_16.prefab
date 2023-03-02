@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3530404410610700061}
   - component: {fileID: 3908483404516366352}
   - component: {fileID: 5343223353450137839}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SM_street_decor_16
   m_TagString: Prop
   m_Icon: {fileID: 0}
