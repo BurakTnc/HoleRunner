@@ -811,7 +811,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2104799516043811718, guid: a3bf00f5976b241e296cbd5dd62c1521, type: 3}
       propertyPath: fireRate
-      value: -7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2104799516043811718, guid: a3bf00f5976b241e296cbd5dd62c1521, type: 3}
       propertyPath: rangeValue
@@ -3170,7 +3170,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7817531481210798664, guid: f674f7f8a196641b2ae79733d962a336, type: 3}
       propertyPath: rangeValue
-      value: 10
+      value: -5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f674f7f8a196641b2ae79733d962a336, type: 3}
@@ -4250,7 +4250,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2104799516043811718, guid: a3bf00f5976b241e296cbd5dd62c1521, type: 3}
       propertyPath: fireRate
-      value: -3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2104799516043811718, guid: a3bf00f5976b241e296cbd5dd62c1521, type: 3}
       propertyPath: rangeValue
@@ -10404,7 +10404,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-13352
+  m_Name: pb_Mesh-1572
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -11199,7 +11199,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-6584
+  m_Name: pb_Mesh-1308
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
