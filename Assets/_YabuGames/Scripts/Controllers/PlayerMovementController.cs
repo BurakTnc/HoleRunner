@@ -50,7 +50,7 @@ namespace _YabuGames.Scripts.Controllers
        private IEnumerator Start()
        {
            yield return new WaitForSeconds(1);
-           transform.position = new Vector3(0, 0, -91);
+           //transform.position = new Vector3(0, 0, -91);
            CoreGameSignals.Instance.OnGameStart?.Invoke();
        }
 

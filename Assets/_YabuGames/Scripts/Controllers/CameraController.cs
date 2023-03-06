@@ -61,7 +61,7 @@ namespace _YabuGames.Scripts.Controllers
 
         private void Follow()
         {
-            var desiredPos = new Vector3(transform.position.x, _player.position.y, _player.position.z) + offset;
+            var desiredPos = new Vector3(_player.position.x, _player.position.y, _player.position.z) + offset;
             if (_isGameRunning)
             {
                 transform.position = Vector3.Lerp(transform.position, desiredPos,

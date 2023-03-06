@@ -17,10 +17,12 @@ namespace _YabuGames.Scripts.Controllers
             Collider[] objs = Physics.OverlapSphere(gravitySource, range, layer);
             for (int i = 0; i < objs.Length; i++)
             {
-                Rigidbody rbs = objs[i].GetComponent<Rigidbody>();
-                var forceDirection = new Vector3(gravitySource.x, upOrDown, gravitySource.z) -
-                                     objs[i].transform.position;
-                rbs.AddForceAtPosition(power * forceDirection.normalized, gravitySource, forceMode);
+                if (objs[i].TryGetComponent(out Rigidbody rbs))
+                {
+                    var forceDirection = new Vector3(gravitySource.x, upOrDown, gravitySource.z) -
+                                         objs[i].transform.position;
+                    rbs.AddForceAtPosition(power * forceDirection.normalized, gravitySource, forceMode);
+                }
             }
         }
 
