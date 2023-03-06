@@ -9,7 +9,6 @@ namespace _YabuGames.Scripts.Controllers
     {
         [SerializeField] private float speed;
         [SerializeField] private float xPosClampMin,xPosClampMax, zPosClampMin, zPosClampMax;
-        [SerializeField] private float sizeMultiplier;
 
         private bool _isGameRunning;
 

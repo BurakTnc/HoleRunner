@@ -5,6 +5,8 @@ namespace _YabuGames.Scripts.Controllers
 {
     public class CameraController : MonoBehaviour
     {
+        public static CameraController Instance;
+        
         [SerializeField] private float followSpeed = 3f;
         [SerializeField] private Vector3 offset;
         
@@ -13,6 +15,7 @@ namespace _YabuGames.Scripts.Controllers
 
         private void Awake()
         {
+            Instance = this;
             _player = GameObject.Find("HoleCenter").transform;
         }
 
@@ -69,6 +72,12 @@ namespace _YabuGames.Scripts.Controllers
             }
 
         
+        }
+
+        public void IncreaseAngle()
+        {
+            offset.z -= 0.05f;
+            offset.y += 0.05f;
         }
     }
 }
